@@ -65,3 +65,13 @@ não cumprido pelo empregador (caso pedido de demissão ou justa causa não rece
 
 6. Paso: Logica de logica de negócio
     para cada escolha mudase a forma da execução da logica, cada escolha tem seus calculos diferentes, e funçoes reposaveis
+
+____________________________________________________________________
+
+Ferramentas que vamos usar ?
+
+nodeJS
+readline sync
+
+vamos usar modularização
+importação ? require ou import ? = import
