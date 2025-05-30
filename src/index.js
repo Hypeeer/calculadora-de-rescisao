@@ -14,13 +14,13 @@ let tipoResicao = '';
 
 switch (escolha) {
   case '1':
-    tipoResicao = TIPO_RESISAO.PEDIDO_DE_DEMISSAO;
+    tipoResicao = TIPO_RESCISAO.PEDIDO_DE_DEMISSAO;
     break;
   case '2':
-    tipoResicao = TIPO_RESISAO.SEM_JUSTA_CAUSA;
+    tipoResicao = TIPO_RESCISAO.SEM_JUSTA_CAUSA;
     break;
   case '3':
-    tipoResicao = TIPO_RESISAO.COM_JUSTA_CAUSA;
+    tipoResicao = TIPO_RESCISAO.COM_JUSTA_CAUSA;
     break;
   case '4':
     tipoResicao = TIPO_RESCISAO.ACORDO_ENTRE_PARTES;
@@ -31,4 +31,18 @@ switch (escolha) {
   default:
 }
 
-console.log(tipoResicao);
+// Menu para inciar funçoes especificas para cada escolha de rescição
+switch (tipoResicao) {
+  case TIPO_RESCISAO.PEDIDO_DE_DEMISSAO:
+    break;
+  case TIPO_RESCISAO.SEM_JUSTA_CAUSA:
+    break;
+  case TIPO_RESCISAO.COM_JUSTA_CAUSA:
+    break;
+  case TIPO_RESCISAO.RESICAO_INDIRETA:
+    break;
+  case TIPO_RESCISAO.ACORDO_ENTRE_PARTES:
+    break;
+  default:
+    break;
+}

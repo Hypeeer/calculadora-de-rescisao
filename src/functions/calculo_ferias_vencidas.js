@@ -6,4 +6,4 @@ const feriasVencidas = (salario, periodo) => {
   return valorTotal;
 };
 
-console.log(feriasVencidas(3000, 12));
+export default feriasVencidas;
