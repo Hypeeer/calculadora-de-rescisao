@@ -63,8 +63,17 @@ não cumprido pelo empregador (caso pedido de demissão ou justa causa não rece
 5. Passo: Pergunta sobre valores do FGTS atual? se ouve saques dependendo do tipo de demissão, se a multa de 40% ou 20%
   (Pedido de demissão e demissão por justa causa, não tem direito) {logica separada}
 
-6. Paso: Logica de logica de negócio
+6. Paso: Logica de negócio
     para cada escolha mudase a forma da execução da logica, cada escolha tem seus calculos diferentes, e funçoes reposaveis
+
+____________________________________________________________________
+| Tipo de rescisão       | Férias | 13º | Aviso            | Multa FGTS |
+| ---------------------- | ------ | --- | ---------------- | ---------- |
+| **Pedido de demissão** | ✅      | ✅   | ❌ se não cumprir | ❌          |
+| **Com justa causa**    | ❌      | ❌   | ❌                | ❌          |
+| **Sem justa causa**    | ✅      | ✅   | ✅                | ✅ (40%)    |
+| **Acordo comum**       | ✅      | ✅   | ✅                | ✅ (20%)    |
+| **Rescisão indireta**  | ✅      | ✅   | ✅                | ✅ (40%)    |
 
 ____________________________________________________________________
 
