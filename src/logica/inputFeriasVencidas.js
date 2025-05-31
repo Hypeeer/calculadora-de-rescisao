@@ -2,11 +2,11 @@ import input from 'readline-sync';
 
 const inputFerias = (meses) => {
   let inputUsuario = '';
-  inputUsuario = input.question(`Você possi ferias vencidas ? caso sim quantas ?`);
+  inputUsuario = input.question(`Você possi ferias vencidas ? caso sim quantas ? `);
   if (inputUsuario === 'sim') {
     inputUsuario = input.question(`Qantos meses trabalhados ? `);
   }
-  return inputFerias;
+  return inputUsuario;
 };
 
 export default inputFerias;

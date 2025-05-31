@@ -1,5 +1,10 @@
+// Bibliotecas do sistema
 import prompt from 'readline-sync';
+
+// Modulo do sistema
 import TIPO_RESCISAO from './enum_menu/tipoResicao.js';
+import inputFerias from './logica/inputFeriasVencidas.js';
+import feriasVencidas from './functions/calculo_ferias_vencidas.js';
 
 console.log(`---Calculadora de resição---`);
 console.log(`1 - Pedido de demissão`);
@@ -9,6 +14,7 @@ console.log(`4 - Acordo entre as partes`);
 console.log(`5 - Rescição indireta`);
 console.log(`----------------------------`);
 const escolha = prompt.question(`Qual o tipo de resição ? `);
+const salarioBase = prompt.question(`Salario atual: `);
 
 let tipoResicao = '';
 
@@ -34,6 +40,7 @@ switch (escolha) {
 // Menu para inciar funçoes especificas para cada escolha de rescição
 switch (tipoResicao) {
   case TIPO_RESCISAO.PEDIDO_DE_DEMISSAO:
+    feriasVencidas(salarioBase, inputFerias());
     break;
   case TIPO_RESCISAO.SEM_JUSTA_CAUSA:
     break;
