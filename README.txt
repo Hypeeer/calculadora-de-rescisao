@@ -1,86 +1,57 @@
-Nome: Calculadora de resição
+# 🧮 Calculadora de Rescisão
 
-O que ela resolve? => Faz o calculo da resição contratual do empregador com base nos dados pedidos
-Funcionalidades ? => Calcula salario base, ferias venccidas, tipo de demição e jurus no FGT
+Este projeto tem como objetivo calcular a rescisão contratual com base nos dados fornecidos pelo usuário.
 
-O que vou precisar para começar ?
+## 📋 Passo a passo do processo
 
-Dados Pessoais e Contratuais
-Salário base 
+1. **Tipo de rescisão**  
+   O usuário escolhe entre:  
+   - Pedido de demissão  
+   - Demissão sem justa causa  
+   - Demissão com justa causa  
+   - Acordo entre as partes  
+   - Rescisão indireta  
 
-Data de admissão
+2. **Férias vencidas**  
+   O sistema pergunta se o usuário possui férias vencidas (em dias). Se sim, realiza o cálculo separado.
 
-Data de demissão
+3. **13º salário proporcional**  
+   Calculado proporcionalmente, exceto nos casos de **demissão por justa causa**.
 
-Tipo de Rescisão
-Causa da demissão:
+4. **Aviso prévio**  
+   Pergunta se o aviso foi:  
+   - Trabalhado  
+   - Indenizado  
+   - Dispensado  
+   - Não cumprido pelo empregador  
+   (Em casos de pedido de demissão ou justa causa, o aviso pode não ser devido.)
 
-Com justa causa
+5. **FGTS**  
+   O usuário informa o valor atual do FGTS. O sistema calcula a multa (40% ou 20%) conforme o tipo de demissão.  
+   - Pedido de demissão e justa causa **não têm direito** à multa.
 
-Sem justa causa
+6. **Lógica de negócio**  
+   Cada tipo de rescisão segue regras específicas. As funções tratam as exceções e cálculos adequadamente.
 
-Pedido de demissão
+---
 
-Acordo entre as partes
+## 📊 Tabela de Direitos
 
-Rescisão indireta
+| Tipo de rescisão       | Férias | 13º | Aviso             | Multa FGTS |
+|------------------------|--------|-----|-------------------|------------|
+| **Pedido de demissão** | ✅     | ✅  | ❌ (se não cumprir) | ❌         |
+| **Com justa causa**    | ❌     | ❌  | ❌                | ❌         |
+| **Sem justa causa**    | ✅     | ✅  | ✅                | ✅ (40%)   |
+| **Acordo comum**       | ✅     | ✅  | ✅                | ✅ (20%)   |
+| **Rescisão indireta**  | ✅     | ✅  | ✅                | ✅ (40%)   |
 
-Férias e Benefícios
-Férias vencidas (quantos dias)
+---
 
-Férias proporcionais (pode calcular com base no tempo trabalhado)
+## 🛠️ Ferramentas utilizadas
 
-13º salário proporcional
+- Node.js  
+- readline-sync  
 
-Aviso Prévio
-Trabalhado
+---
 
-Indenizado
-
-Dispensado
-
-Não cumprido pelo empregador
-
-FGTS
-Saldo atual
-
-Se houve saque
-
-Se houve multa de 40% ou 20% (dependendo do tipo de demissão)
-____________________________________________________________________
-
-1. Paso: Pergunta ao usuario qual tipo de resição {
-  pedido de demissão, demissão sem justa causa, com justa causa, Acordo entre as partes, resição indireta
-}
-
-2. Passo: Perunte se a ferias vencidas (Dias), caso aja (logica separada de somatoria)
-
-3. Passo: Calculo do 13 proporcionais (caso demissão seja por justa causa, não recebe) {logica separada}
-
-4. Passo: Pergunta o tipo de aviso previo se e trabalhado, Indenizado ou Dispensado ou
-não cumprido pelo empregador (caso pedido de demissão ou justa causa não recebe) {logica separada}
-
-5. Passo: Pergunta sobre valores do FGTS atual? se ouve saques dependendo do tipo de demissão, se a multa de 40% ou 20%
-  (Pedido de demissão e demissão por justa causa, não tem direito) {logica separada}
-
-6. Paso: Logica de negócio
-    para cada escolha mudase a forma da execução da logica, cada escolha tem seus calculos diferentes, e funçoes reposaveis
-
-____________________________________________________________________
-| Tipo de rescisão       | Férias | 13º | Aviso            | Multa FGTS |
-| ---------------------- | ------ | --- | ---------------- | ---------- |
-| **Pedido de demissão** | ✅      | ✅   | ❌ se não cumprir | ❌          |
-| **Com justa causa**    | ❌      | ❌   | ❌                | ❌          |
-| **Sem justa causa**    | ✅      | ✅   | ✅                | ✅ (40%)    |
-| **Acordo comum**       | ✅      | ✅   | ✅                | ✅ (20%)    |
-| **Rescisão indireta**  | ✅      | ✅   | ✅                | ✅ (40%)    |
-
-____________________________________________________________________
-
-Ferramentas que vamos usar ?
-
-nodeJS
-readline sync
-
-vamos usar modularização
-importação ? require ou import ? = import
+> Projeto em desenvolvimento para fins de estudo e prática de lógica de programação com foco em regras de negócio.
