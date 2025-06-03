@@ -1,10 +1,14 @@
 // Bibliotecas do sistema
 import prompt from 'readline-sync';
 
-// Modulo do sistema
+// Modulo da logica do sistema
 import TIPO_RESCISAO from './enum_menu/tipoResicao.js';
-import inputFerias from './logica/inputFeriasVencidas.js';
 import feriasVencidas from './functions/calculoFeriasVencidas.js';
+import descimoTerceiroProporcional from './functions/calculoDecimoTerceiro.js';
+
+// Modulos de logica de perguntas do sistemas
+import inputFerias from './logica/inputFeriasVencidas.js';
+import inputDecimoTerceiro from './logica/inputDecimoTerceiro.js';
 
 console.log(`---Calculadora de resição---`);
 console.log(`1 - Pedido de demissão`);
@@ -41,6 +45,7 @@ switch (escolha) {
 switch (tipoResicao) {
   case TIPO_RESCISAO.PEDIDO_DE_DEMISSAO:
     feriasVencidas(salarioBase, inputFerias());
+    descimoTerceiroProporcional(salarioBase, inputDecimoTerceiro);
     break;
   case TIPO_RESCISAO.SEM_JUSTA_CAUSA:
     feriasVencidas(salarioBase, inputFerias());
