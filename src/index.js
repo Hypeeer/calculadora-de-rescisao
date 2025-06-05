@@ -1,14 +1,9 @@
 // Bibliotecas do sistema
-import prompt from 'readline-sync';
+import prompt, { question } from 'readline-sync';
 
 // Modulo da logica do sistema
-import TIPO_RESCISAO from './enum_menu/tipoResicao.js';
-import feriasVencidas from './functions/calculoFeriasVencidas.js';
-import descimoTerceiroProporcional from './functions/calculoDecimoTerceiro.js';
-
-// Modulos de logica de perguntas do sistemas
-import inputFerias from './logica/inputFeriasVencidas.js';
-import inputDecimoTerceiro from './logica/inputDecimoTerceiro.js';
+import primeiroMenu from './logica_menus/primeiro_menu.js';
+import segundoMenu from './logica_menus/segundo_menu.js';
 
 console.log(`---Calculadora de resição---`);
 console.log(`1 - Pedido de demissão`);
@@ -17,47 +12,17 @@ console.log(`3 - Demissão com justa causa`);
 console.log(`4 - Acordo entre as partes`);
 console.log(`5 - Rescição indireta`);
 console.log(`----------------------------`);
-const escolha = prompt.question(`Qual o tipo de resição ? `);
+const escolhaResicao = prompt.question(`Qual o tipo de resição ? `);
 const salarioBase = prompt.question(`Salario atual: `);
 
-let tipoResicao = '';
+primeiroMenu(escolhaResicao, salarioBase);
 
-switch (escolha) {
-  case '1':
-    tipoResicao = TIPO_RESCISAO.PEDIDO_DE_DEMISSAO;
-    break;
-  case '2':
-    tipoResicao = TIPO_RESCISAO.SEM_JUSTA_CAUSA;
-    break;
-  case '3':
-    tipoResicao = TIPO_RESCISAO.COM_JUSTA_CAUSA;
-    break;
-  case '4':
-    tipoResicao = TIPO_RESCISAO.ACORDO_ENTRE_PARTES;
-    break;
-  case '5':
-    tipoResicao = TIPO_RESCISAO.RESICAO_INDIRETA;
-    break;
-  default:
-}
+console.log(`--- Tipo de aviso previor ---`);
+console.log(`1 - Trabalhado`);
+console.log(`2 - Indenizado`);
+console.log(`3 - Dispensado`);
+console.log(`4 - Nao comprido`);
+console.log(`-----------------------------`);
+const escolhaAviso = prompt.question(`Qual tipo de aviso ? `);
 
-// Menu para inciar funçoes especificas para cada escolha de rescição
-switch (tipoResicao) {
-  case TIPO_RESCISAO.PEDIDO_DE_DEMISSAO:
-    feriasVencidas(salarioBase, inputFerias());
-    descimoTerceiroProporcional(salarioBase, inputDecimoTerceiro);
-    break;
-  case TIPO_RESCISAO.SEM_JUSTA_CAUSA:
-    feriasVencidas(salarioBase, inputFerias());
-    break;
-  case TIPO_RESCISAO.COM_JUSTA_CAUSA:
-    break;
-  case TIPO_RESCISAO.RESICAO_INDIRETA:
-    feriasVencidas(salarioBase, inputFerias());
-    break;
-  case TIPO_RESCISAO.ACORDO_ENTRE_PARTES:
-    feriasVencidas(salarioBase, inputFerias());
-    break;
-  default:
-    break;
-}
+segundoMenu(escolhaAviso);
