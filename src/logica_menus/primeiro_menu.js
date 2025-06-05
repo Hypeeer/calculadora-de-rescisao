@@ -5,8 +5,8 @@ import descimoTerceiroProporcional from '../functions/calculoDecimoTerceiro.js';
 import feriasVencidas from '../functions/calculoFeriasVencidas.js';
 
 //Modulo de perguntas para o menu
-import inputFerias from '../logica/inputFeriasVencidas.js';
-import inputDecimoTerceiro from '../logica/inputDecimoTerceiro.js';
+import inputFerias from '../logica_inputs/inputFeriasVencidas.js';
+import inputDecimoTerceiro from '../logica_inputs/inputDecimoTerceiro.js';
 
 const primeiroMenu = (escolhaResicao, salarioBase) => {
   let tipoRescisao = '';
