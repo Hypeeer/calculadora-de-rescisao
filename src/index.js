@@ -1,7 +1,7 @@
 // Bibliotecas do sistema
 import prompt, { question } from 'readline-sync';
 
-// Modulo da logica do sistema
+// Modulo dos menus separados
 import primeiroMenu from './logica_menus/primeiro_menu.js';
 import segundoMenu from './logica_menus/segundo_menu.js';
 

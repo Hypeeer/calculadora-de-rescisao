@@ -1,6 +1,10 @@
 import TIPO_RESCISAO from '../enum_menu/tipoResicao.js';
+
+//Logica de calculo do sistema
 import descimoTerceiroProporcional from '../functions/calculoDecimoTerceiro.js';
 import feriasVencidas from '../functions/calculoFeriasVencidas.js';
+
+//Modulo de perguntas para o menu
 import inputFerias from '../logica/inputFeriasVencidas.js';
 import inputDecimoTerceiro from '../logica/inputDecimoTerceiro.js';
 
