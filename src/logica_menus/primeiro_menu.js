@@ -3,10 +3,12 @@ import TIPO_RESCISAO from '../enum_menu/tipoResicao.js';
 //Logica de calculo do sistema
 import descimoTerceiroProporcional from '../functions/calculoDecimoTerceiro.js';
 import feriasVencidas from '../functions/calculoFeriasVencidas.js';
+import calculoFGTS from '../functions/calculoFgts.js';
 
 //Modulo de perguntas para o menu
 import inputFerias from '../logica_inputs/inputFeriasVencidas.js';
 import inputDecimoTerceiro from '../logica_inputs/inputDecimoTerceiro.js';
+import inputFGTS from '../logica_inputs/inputFGTS.js';
 
 const primeiroMenu = (escolhaResicao, salarioBase) => {
   let tipoRescisao = '';
@@ -37,6 +39,7 @@ const primeiroMenu = (escolhaResicao, salarioBase) => {
     case TIPO_RESCISAO.SEM_JUSTA_CAUSA:
       feriasVencidas(salarioBase, inputFerias());
       descimoTerceiroProporcional(salarioBase, inputDecimoTerceiro());
+      calculoFGTS(tipoRescisao, inputFGTS());
       break;
     case TIPO_RESCISAO.COM_JUSTA_CAUSA:
       break;
