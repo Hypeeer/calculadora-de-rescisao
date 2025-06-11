@@ -1,6 +1,6 @@
 import input from 'readline-sync';
 
-const inputFerias = (meses) => {
+const inputFerias = () => {
   let inputUsuario = '';
   inputUsuario = input.question(`Você possi ferias vencidas ? caso sim quantas ? `);
   if (inputUsuario === 'sim') {

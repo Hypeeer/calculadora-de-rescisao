@@ -1,6 +1,6 @@
 import input from 'readline-sync';
 
-const inputDecimoTerceiro = (meses) => {
+const inputDecimoTerceiro = () => {
   let inputUsuario = '';
   inputUsuario = input.question(`Possui decimo terceiro proporcionais ? caso sim, quantos meses? `);
   if (inputUsuario === 'sim') {
