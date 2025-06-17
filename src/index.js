@@ -13,11 +13,13 @@ console.log(`4 - Acordo entre as partes`);
 console.log(`5 - Rescição indireta`);
 console.log(`----------------------------`);
 const escolhaResicao = prompt.question(`Qual o tipo de resição ? `);
+
 const salarioBase = prompt.question(`Salario atual: `);
 
-primeiroMenu(escolhaResicao, salarioBase);
+const resutado = primeiroMenu(escolhaResicao, salarioBase);
+console.log(resutado);
 
-console.log(`--- Tipo de aviso previor ---`);
+/* console.log(`--- Tipo de aviso previor ---`);
 console.log(`1 - Trabalhado`);
 console.log(`2 - Indenizado`);
 console.log(`3 - Dispensado`);
@@ -25,4 +27,4 @@ console.log(`4 - Nao comprido`);
 console.log(`-----------------------------`);
 const escolhaAviso = prompt.question(`Qual tipo de aviso ? `);
 
-segundoMenu(escolhaAviso);
+segundoMenu(escolhaAviso); */

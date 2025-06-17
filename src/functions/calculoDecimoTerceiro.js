@@ -1,8 +1,8 @@
 const descimoTerceiroProporcional = (salarioBase, meses) => {
   const valorMes = salarioBase / 12;
-  const ValorTotal = valorMes * meses;
+  const valorTotal = valorMes * meses;
 
-  return ValorTotal;
+  return valorTotal;
 };
 
 export default descimoTerceiroProporcional;
