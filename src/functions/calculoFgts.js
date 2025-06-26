@@ -6,8 +6,6 @@ const calculoFGTS = (escolhaUsuario, saldoFGTS) => {
     valorFGTS = (saldoFGTS * 40) / 100;
   } else if (escolhaUsuario === TIPO_RESCISAO.ACORDO_ENTRE_PARTES) {
     valorFGTS = (saldoFGTS * 20) / 100;
-  } else {
-    console.log(`Não tem direito ao FGTS`);
   }
 
   return valorFGTS;

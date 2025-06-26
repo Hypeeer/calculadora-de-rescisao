@@ -4,7 +4,7 @@ import prompt, { question } from 'readline-sync';
 // Modulo dos menus separados
 import primeiroMenu from './logica_menus/primeiro_menu.js';
 import segundoMenu from './logica_menus/segundo_menu.js';
-import mostraResutadosFinal from './logica_menus/exibir_resutados.js';
+import { formatarFerias, formatarDecimo, formatarFGTS } from './logica_menus/exibir_resutados.js';
 
 console.log(`---Calculadora de resição---`);
 console.log(`1 - Pedido de demissão`);
@@ -18,7 +18,16 @@ const escolhaResicao = prompt.question(`Tipo de resição: `);
 const salarioBase = prompt.question(`\nSalario atual: `);
 
 const resutado = primeiroMenu(escolhaResicao, salarioBase);
-mostraResutadosFinal(resutado);
+
+const resultadoFinal = {
+  ferias: formatarFerias(resutado),
+  decimo: formatarDecimo(resutado),
+  fgts: formatarFGTS(resutado),
+};
+
+console.log(resultadoFinal.ferias);
+console.log(resultadoFinal.decimo);
+console.log(resultadoFinal.fgts);
 
 /* console.log(`--- Tipo de aviso previor ---`);
 console.log(`1 - Trabalhado`);

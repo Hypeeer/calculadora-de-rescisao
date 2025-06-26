@@ -37,15 +37,15 @@ const primeiroMenu = (escolhaResicao, salarioBase) => {
 
   switch (tipoRescisao) {
     case TIPO_RESCISAO.PEDIDO_DE_DEMISSAO:
+      retornoFerias = feriasVencidas(salarioBase, inputFerias());
+      retornoDecimo = descimoTerceiroProporcional(salarioBase, inputDecimoTerceiro());
+      break;
     case TIPO_RESCISAO.SEM_JUSTA_CAUSA:
     case TIPO_RESCISAO.ACORDO_ENTRE_PARTES:
     case TIPO_RESCISAO.RESICAO_INDIRETA:
       retornoFerias = feriasVencidas(salarioBase, inputFerias());
-
       retornoDecimo = descimoTerceiroProporcional(salarioBase, inputDecimoTerceiro());
-
-      retornoFGTS = calculoFGTS(tipoRescisao, inputFGTS());
-
+      retornoFGTS = calculoFGTS(tipoRescisao, inputFGTS(tipoRescisao));
       break;
     case TIPO_RESCISAO.COM_JUSTA_CAUSA:
       break;
