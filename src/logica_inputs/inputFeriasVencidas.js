@@ -2,11 +2,16 @@ import input from 'readline-sync';
 
 const inputFerias = () => {
   let inputUsuario = '';
-  inputUsuario = input.question(`Você possi ferias vencidas ? caso sim quantas ? `);
+  console.log(`\n-----------------------Calculo De ferias--------------------------`);
+  console.log(`\nVocê possui ferias vencidas ? caso sim, informe meses trabalhados!`);
+  inputUsuario = input.question(`Sim ou Não: `);
 
   if (inputUsuario === 'sim') {
-    inputUsuario = input.question(`Qantos meses trabalhados ? `);
+    console.log(`\nQuantos meses trabalhados?`);
+    inputUsuario = input.question(`Meses: `);
   }
+  console.log(`-------------------------------------------------------------------`);
+
   return inputUsuario;
 };
 

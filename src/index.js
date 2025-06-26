@@ -4,6 +4,7 @@ import prompt, { question } from 'readline-sync';
 // Modulo dos menus separados
 import primeiroMenu from './logica_menus/primeiro_menu.js';
 import segundoMenu from './logica_menus/segundo_menu.js';
+import mostraResutadosFinal from './logica_menus/exibir_resutados.js';
 
 console.log(`---Calculadora de resição---`);
 console.log(`1 - Pedido de demissão`);
@@ -11,13 +12,13 @@ console.log(`2 - Demissão sem justa causa`);
 console.log(`3 - Demissão com justa causa`);
 console.log(`4 - Acordo entre as partes`);
 console.log(`5 - Rescição indireta`);
-console.log(`----------------------------`);
-const escolhaResicao = prompt.question(`Qual o tipo de resição ? `);
+console.log(`---------------------------- \n`);
+const escolhaResicao = prompt.question(`Tipo de resição: `);
 
-const salarioBase = prompt.question(`Salario atual: `);
+const salarioBase = prompt.question(`\nSalario atual: `);
 
 const resutado = primeiroMenu(escolhaResicao, salarioBase);
-console.log(resutado);
+mostraResutadosFinal(resutado);
 
 /* console.log(`--- Tipo de aviso previor ---`);
 console.log(`1 - Trabalhado`);
